@@ -1,0 +1,45 @@
+<div>
+  <h1>Open Credit Card</h1>
+  <table class="table">
+    <th>Rate</th>
+    <th>Duration</th>
+    <th>Limit</th>
+    <th>Curency</th>
+    <thead>
+    </thead>
+    <tbody>
+    <td><input [(ngModel)]="creditDto.rate" id="rate" name="rate" value="number"></td>
+    <td><input [(ngModel)]="creditDto.duration" id="duration" name="duration" value="number"></td>
+    <td><input [(ngModel)]="creditDto.limitCard" id="limitCard" name="limitCard" value="number"></td>
+    <td><select [(ngModel)]="creditDto.curencyEnum" id="curencyEnum" name="curencyEnum">
+      <option value="1">Ruble</option>
+      <option value="2">USD</option>
+      <option value="3">Euro</option>
+    </select></td>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="addCredit()">Send request</button>
+  <h2>List Credits</h2>
+  <table class="table">
+    <th>Rate</th>
+    <th>Curency</th>
+    <th>Wallet</th>
+    <th>Limit</th>
+    <th>Duration</th>
+    <th>Valid</th>
+    <th>confirm</th>
+    <th>Paymetns</th>
+    <thead>
+    </thead>
+    <tbody *ngFor="let credit of credits">
+    <td>{{credit.rate}}</td>
+    <td>{{credit.currencyEnum}}</td>
+    <td>{{credit.wallet}}</td>
+    <td>{{credit.limitCard}}</td>
+    <td>{{credit.duration}}</td>
+    <td>{{credit.validPeriod}}</td>
+    <td>{{credit.confirm}}</td>
+    <td href="Pay">Payments</td>
+    </tbody>
+  </table>
+</div>

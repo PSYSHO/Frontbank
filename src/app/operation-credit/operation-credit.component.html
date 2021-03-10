@@ -1,0 +1,23 @@
+<div>
+  <table class="table" *ngIf="creditCard">
+    <th>Rate</th>
+    <th>Curency</th>
+    <th>Wallet</th>
+    <th>Limit</th>
+    <th>Duration</th>
+    <th>Valid</th>
+    <th>confirm</th>
+    <thead>
+    </thead>
+    <tbody>
+    <td>{{creditCard.rate}}</td>
+    <td>{{creditCard.currencyEnum}}</td>
+    <td>{{creditCard.wallet}}</td>
+    <td>{{creditCard.limitCard}}</td>
+    <td>{{creditCard.duration}}</td>
+    <td>{{creditCard.validPeriod}}</td>
+    <td>{{creditCard.confirm}}</td>
+    </tbody>
+  </table>
+  <button (click)="operation()">back</button>
+</div>

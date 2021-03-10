@@ -1,0 +1,39 @@
+<div>
+  <table class="table">
+    <th>Approved Client</th>
+    <th>Discription</th>
+    <th>Approved Operato</th>
+    <th>Type</th>
+    <thead>
+    </thead>
+    <tbody *ngFor="let operation of operationsC">
+    <td>{{operation.approvedClient}}</td>
+    <td>{{operation.description}}</td>
+    <td>{{operation.approvedOperator}}</td>
+    <td>{{operation.type}}</td>
+    <td>
+    <button (click)="operationDetailsCredit(operation.productid)">More</button>
+      <button  (click)="addConfirmCredit(operation.id)" class="btn">Confirm</button>
+    </td>
+    </tbody>
+  </table>
+  <table class="table">
+    <th>Approved Client</th>
+    <th>Discription</th>
+    <th>Approved Operato</th>
+    <th>Type</th>
+    <thead>
+    </thead>
+    <tbody *ngFor="let operationd of operationcD">
+    <td>{{operationd.approvedClient}}</td>
+    <td>{{operationd.description}}</td>
+    <td>{{operationd.approvedOperator}}</td>
+    <td>{{operationd.type}}</td>
+    <td>
+      <button (click)="operationDetailsDepos(operationd.productid)">More</button>
+      <button  (click)="addConfirmDepos(operationd.productid)" class="btn">Confirm</button>
+    </td>
+    </tbody>
+  </table>
+
+</div>

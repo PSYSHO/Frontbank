@@ -1,0 +1,23 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <div class="container">
+  <table class="table" >
+    <thead>
+    <th width="100%">Username</th>
+    <th width="100%">email</th>
+    <th width="100%">Wallet</th>
+    <th width="100%">Roles</th>
+    <th width="100%">Button</th>
+    </thead>
+    <tbody *ngFor="let user of users">
+    <td width="100%">{{ user.username }}</td>
+    <td width="100%">{{ user.email }}</td>
+    <td width="100%">{{ user.wallet }}</td>
+    <td width="100%" *ngFor="let role of user.roles">{{ role.name }}</td>
+    <td width="100%">
+      <button (click)="addOp(user)" class="btn btn-primary">Operator</button>
+      <button (click)="addAdm(user)" class="btn btn-primary">Admin</button>
+    </td>
+    </tbody>
+  </table>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div>
+  <h1>Open Deposit</h1>
+  <table class="table">
+    <th>Summa</th>
+    <th>Tarif</th>
+    <th>Description</th>
+    <th>Duration</th>
+    <thead>
+    </thead>
+    <tbody>
+    <td><input [(ngModel)]="deposDto.walletDepos" id="walletDeppos" name="walletDeppos" type="number"></td>
+    <td><select [(ngModel)]="deposDto.tarif">
+      <option *ngFor="let tarif of tarifs" id="tarif" name="tarif" value="{{tarif.id}}">name={{tarif.name}}
+        type={{tarif.type}} rate={{tarif.rate}}</option>
+    </select></td>
+    <td><input [(ngModel)]="deposDto.description" id="description" name="description" type="text"></td>
+    <td><input [(ngModel)]="deposDto.duration" id="duration" name="duration" type="number"></td>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="addDeposit()">Send request</button>
+  <h2>List ConfirmDepos</h2>
+  <table class="table">
+    <th>Type</th>
+    <th>TarifName</th>
+    <th>Wallet</th>
+    <th>Confirm</th>
+    <thead>
+    </thead>
+    <tbody *ngFor="let deposit of deposits">
+    <td>{{deposit.description}}</td>
+    <td>{{deposit.tarif.name}}</td>
+    <td>{{deposit.walletDepos}}</td>
+    <td>{{deposit.confirm}}</td>
+    </tbody>
+  </table>
+</div>

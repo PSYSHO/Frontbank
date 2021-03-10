@@ -1,0 +1,51 @@
+<div class="container" class="jumbotron">
+  <header class="jumbotron" *ngIf="user">
+    <h1>User= {{ user.username }} </h1>
+    <h2> Wallet= {{ user.wallet }} </h2>
+    <h2>Email= {{ user.email }}</h2>
+  </header>
+  <H1>Credits User</H1>
+  <table class="table">
+    <th>Rate</th>
+    <th>Curency</th>
+    <th>Wallet</th>
+    <th>Limit</th>
+    <th>Duration</th>
+    <th>Valid</th>
+    <th>confirm</th>
+    <th>Paymetns</th>
+    <thead>
+    </thead>
+    <tbody *ngFor="let credit of credits">
+    <td>{{credit.rate}}</td>
+    <td>{{credit.currencyEnum}}</td>
+    <td>{{credit.wallet}}</td>
+    <td>{{credit.limitCard}}</td>
+    <td>{{credit.duration}}</td>
+    <td>{{credit.validPeriod}}</td>
+    <td>{{credit.confirm}}</td>
+    <td href="Pay">Payments</td>
+    </tbody>
+  </table>
+  <button (click)="createCredit()" class="btn btn-primary"> Open new Credit</button>
+  <H1>Deposits User</H1>
+  <table class="table">
+    <th>Type</th>
+    <th>TarifName</th>
+    <th>TarifRate</th>
+    <th>Wallet</th>
+    <th>Confirm</th>
+    <th>Close</th>
+    <thead>
+    </thead>
+    <tbody *ngFor="let deposit of deposits">
+    <td>{{deposit.description}}</td>
+    <td>{{deposit.tarif.name}}</td>
+    <td>{{deposit.tarif.rate}}</td>
+    <td>{{deposit.walletDepos}}</td>
+    <td>{{deposit.confirm}}</td>
+    <td><button (click)="remove(deposit.id)">Close</button></td>
+    </tbody>
+  </table>
+  <button (click)="createDepos()"class="btn btn-primary">Open new Deposit</button>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <table class="table" *ngIf="deposits">
+    <th>Name Tarif</th>
+    <th>Wallet</th>
+    <th>Descrition</th>
+    <th>rate</th>
+    <th>confirm</th>
+    <thead>
+    </thead>
+    <tbody>
+    <td>{{deposits.tarif.name}}</td>
+    <td>{{deposits.walletDepos}}</td>
+    <td>{{deposits.description}}</td>
+    <td>{{deposits.tarif.rate}}</td>
+    <td>{{deposits.confirm}}</td>
+    </tbody>
+  </table>
+  <button (click)="operation()">back</button>
+</div>

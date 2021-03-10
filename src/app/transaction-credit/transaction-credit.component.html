@@ -1,0 +1,11 @@
+<div>
+  <P>Discription</P>
+  <p><input [(ngModel)]="transactionDto.discription"></p>
+  <p>Wallet</p>
+  <p><select [(ngModel)]="transactionDto.wallet">
+    <option *ngFor="let credit of credits" id="wallet" name="wallet" value="{{credit.id}}">{{credit.id}}</option>
+  </select></p>
+  <p>Summ</p>
+  <p><input [(ngModel)]="transactionDto.summ" id="summ" name="summ" value="number"></p>
+  <button (click)="addCreditTransaction()">Add</button>
+</div>
